@@ -15,10 +15,12 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         header {
             text-align: center;
             padding: 2rem 1rem;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
             font-size: 3rem;
@@ -34,9 +36,11 @@
             max-width: 1000px;
             text-align: center;
             padding: 2rem 1rem;
+            animation: fadeIn 3s ease-in-out;
         }
         section {
             margin-bottom: 3rem;
+            animation: fadeInUp 2s ease-in-out;
         }
         h2 {
             font-size: 2rem;
@@ -53,6 +57,9 @@
             text-align: center;
             background: #1f1f1f;
             width: 100%;
+            position: fixed;
+            bottom: 0;
+            animation: fadeIn 2s ease-in-out;
         }
         footer p {
             margin: 0;
@@ -76,9 +83,42 @@
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
+            transition: background 0.3s ease-in-out;
         }
         .btn:hover {
             background: #00cc00;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(0, 255, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
+        header h1, .btn {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
